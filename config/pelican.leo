@@ -55,15 +55,16 @@
 <v t="leo.20170710022054.1"><vh>可以另建節點存放 markdown 目錄下的 md 檔案</vh></v>
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
 <v t="leo.20180115115910.1"><vh>2022</vh>
-<v t="leo.20220407153019.1"><vh>W7</vh></v>
-<v t="leo.20180423103639.1"><vh>2022-Spring- CD</vh>
+<v t="leo.20220407153019.1"><vh>W7</vh>
 <v t="leo.20220407153019.2"><vh>@edit.4.md</vh></v>
+</v>
+<v t="leo.20180423103639.1"><vh>2022-Spring- CD</vh>
 <v t="leo.20220421120224.1"><vh>@edit.20220423.md</vh></v>
-<v t="leo.20180423103656.1"><vh>@edit 20220331.md</vh></v>
 </v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
+<v t="leo.20180423103656.1"><vh>@edit 20220331.md</vh></v>
 </v>
 <v t="yen.20170108171930.1"><vh>@button https server</vh></v>
 <v t="yen.20170108171939.1"><vh>@button ipv6 https server</vh></v>
@@ -172,7 +173,7 @@ vertical: body pane on the botton</t>
 <t tx="yen.20170108171733.2">@language python
 import os
 
-os.system("pelican markdown -o blog -s local_f.pypublishcon")
+os.system("pelican markdown -o blog -s local_publishconf.py")
 g.es("admin pelican 近端執行完畢")
 
 

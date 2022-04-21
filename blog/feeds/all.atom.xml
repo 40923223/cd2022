@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2022-04-21T21:57:14+08:00</updated><entry><title>協同產品設計W8</title><link href="./midterm.html" rel="alternate"></link><published>2022-04-21T00:00:00+08:00</published><updated>2022-04-21T21:46:22+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-04-21:./midterm.html</id><summary type="html">&lt;p&gt;2022協同產品設計實習w8&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2022-04-21T22:04:12+08:00</updated><entry><title>協同產品設計W8</title><link href="./midterm.html" rel="alternate"></link><published>2022-04-21T00:00:00+08:00</published><updated>2022-04-21T22:04:12+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-04-21:./midterm.html</id><summary type="html">&lt;p&gt;2022協同產品設計實習w8&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022協同產品設計實習w8&lt;/p&gt;
+
 
 &lt;h2&gt;內容&lt;/h2&gt;
 &lt;p&gt;w8的部分為將uram手臂放入coppeliasim去模擬並使用UI介面去控制網站 分配到的零件(29~~35)&lt;/p&gt;
-&lt;p&gt;流程
-----[show]https://40923223.github.io/cd2022/content/midterm.html&lt;/p&gt;
+&lt;h2&gt;流程&lt;/h2&gt;
 &lt;p&gt;依照分配到的零件去畫出來wink在&lt;a href="https://40923223.github.io/cd2022/content/midterm.html"&gt;零件繪製&lt;/a&gt; 再來丟進coppeliasim模擬，過程都在上面的連結了&lt;/p&gt;
 &lt;h2&gt;心得&lt;/h2&gt;
-&lt;p&gt;目前都還行，比起上學期更加得心應手。&lt;/p&gt;</content><category term="Misc"></category><category term="2022SpringCD"></category></entry><entry><title>W7</title><link href="./w7_summary.html" rel="alternate"></link><published>2022-04-07T03:33:00+08:00</published><updated>2022-04-21T21:57:14+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-04-07:./w7_summary.html</id><summary type="html">&lt;p&gt;2022協同產品設計實習
-工作分配進度&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;2022協同產品設計實習
-工作分配進度&lt;/p&gt;
+&lt;p&gt;目前都還行，比起上學期更加得心應手。&lt;/p&gt;</content><category term="Misc"></category><category term="2022pringCD"></category></entry><entry><title>W7</title><link href="./w7_summary.html" rel="alternate"></link><published>2022-04-07T03:33:00+08:00</published><updated>2022-04-21T22:03:41+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-04-07:./w7_summary.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    #&lt;span class="k"&gt;include&lt;/span&gt;  &lt;span class="nv"&gt;iostream&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;h2&gt;2022協同產品設計實習&lt;/h2&gt;
+&lt;p&gt;工作分配進度&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;使用&lt;span class="nv"&gt;c&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;抽籤    #&lt;span class="k"&gt;include&lt;/span&gt;  &lt;span class="nv"&gt;iostream&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;include  stdlib.h&amp;gt;
@@ -26,7 +24,9 @@ int main(){
 &lt;span class="nv"&gt;cout&lt;/span&gt;大於大於&lt;span class="nv"&gt;rand&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; 大於大於&lt;span class="nv"&gt;endl&lt;/span&gt;&lt;span class="c1"&gt;;&lt;/span&gt;
 
 &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="c1"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Misc"></category><category term="2022pring CD"></category></entry><entry><title>2022 Spring CD 課程</title><link href="./w6_40923223.html" rel="alternate"></link><published>2022-03-31T11:00:00+08:00</published><updated>2022-04-21T21:46:22+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-03-31:./w6_40923223.html</id><summary type="html">&lt;p&gt;2020 Fall 計算機程式的教學主要介紹 Python 與 Flutter 在機械設計流程中的應用.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;2020 Fall 計算機程式的教學主要介紹 Python 與 Flutter 在機械設計流程中的應用.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Misc"></category><category term="2022pring CD"></category></entry><entry><title>2022 Spring CD 課程</title><link href="./w6_40923223.html" rel="alternate"></link><published>2022-03-31T11:00:00+08:00</published><updated>2022-04-21T21:59:22+08:00</updated><author><name>40923223</name></author><id>tag:None,2022-03-31:./w6_40923223.html</id><summary type="html">&lt;p&gt;2022-Spring-CD&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022-Spring-CD&lt;/p&gt;
 
-&lt;p&gt;40923223&lt;/p&gt;</content><category term="Misc"></category><category term="2022pring CD"></category></entry></feed>
+
+&lt;h2&gt;40923223&lt;/h2&gt;
+&lt;p&gt;NX是集合CAD/CAM/CAE於一體的三維參數化產品設計軟體平台，該軟體系統提供了基於特徵的參數化設計、基於草圖的參數化設計以及基於裝配的參數化設計方法。其擁有強大的實體造型、曲面造型、虛擬裝配和工程圖設計能力，並具有良好的高階語言介面。&lt;/p&gt;</content><category term="Misc"></category><category term="2022pring CD"></category></entry></feed>
