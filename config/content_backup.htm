@@ -1037,7 +1037,93 @@ function insertBox()
     end
 end
 </pre>
-<p><br/><br/></p><h2>模擬</h2>
+<p><br/>吸盤</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
+    s=sim.getObject('./Sensor')
+    l=sim.getObject('./LoopClosureDummy1')
+    l2=sim.getObject('./LoopClosureDummy2')
+    b=sim.getObject('.')
+    suctionPadLink=sim.getObject('./Link')
+ 
+    infiniteStrength=true
+    maxPullForce=3
+    maxShearForce=1
+    maxPeelTorque=0.1
+    enabled=true
+ 
+    sim.setLinkDummy(l,-1)
+    sim.setObjectParent(l,b,true)
+    m=sim.getObjectMatrix(l2,-1)
+    sim.setObjectMatrix(l,-1,m)
+end
+ 
+function sysCall_cleanup() 
+    sim.setLinkDummy(l,-1)
+    sim.setObjectParent(l,b,true)
+    m=sim.getObjectMatrix(l2,-1)
+    sim.setObjectMatrix(l,-1,m)
+end
+ 
+function sysCall_sensing() 
+    parent=sim.getObjectParent(l)
+    if not enabled then
+        if (parent~=b) then
+            sim.setLinkDummy(l,-1)
+            sim.setObjectParent(l,b,true)
+            m=sim.getObjectMatrix(l2,-1)
+            sim.setObjectMatrix(l,-1,m)
+        end
+    else
+        if (parent==b) then
+            -- Here we want to detect a respondable shape, and then connect to it with a force sensor (via a loop closure dummy dummy link)
+            -- However most respondable shapes are set to "non-detectable", so "sim.readProximitySensor" or similar will not work.
+            -- But "sim.checkProximitySensor" or similar will work (they don't check the "detectable" flags), but we have to go through all shape objects!
+            index=0
+            while true do
+                shape=sim.getObjects(index,sim.object_shape_type)
+                if (shape==-1) then
+                    break
+                end
+                if (shape~=b) and (sim.getObjectInt32Param(shape,sim.shapeintparam_respondable)~=0) and (sim.checkProximitySensor(s,shape)==1) then
+                    -- Ok, we found a respondable shape that was detected
+                    -- We connect to that shape:
+                    -- Make sure the two dummies are initially coincident:
+                    sim.setObjectParent(l,b,true)
+                    m=sim.getObjectMatrix(l2,-1)
+                    sim.setObjectMatrix(l,-1,m)
+                    -- Do the connection:
+                    sim.setObjectParent(l,shape,true)
+                    sim.setLinkDummy(l,l2)
+                    break
+                end
+                index=index+1
+            end
+        else
+            -- Here we have an object attached
+            if (infiniteStrength==false) then
+                -- We might have to conditionally beak it apart!
+                result,force,torque=sim.readForceSensor(suctionPadLink) -- Here we read the median value out of 5 values (check the force sensor prop. dialog)
+                if (result&gt;0) then
+                    breakIt=false
+                    if (force[3]&gt;maxPullForce) then breakIt=true end
+                    sf=math.sqrt(force[1]*force[1]+force[2]*force[2])
+                    if (sf&gt;maxShearForce) then breakIt=true end
+                    if (torque[1]&gt;maxPeelTorque) then breakIt=true end
+                    if (torque[2]&gt;maxPeelTorque) then breakIt=true end
+                    if (breakIt) then
+                        -- We break the link:
+                        sim.setLinkDummy(l,-1)
+                        sim.setObjectParent(l,b,true)
+                        m=sim.getObjectMatrix(l2,-1)
+                        sim.setObjectMatrix(l,-1,m)
+                    end
+                end
+            end
+        end
+    end
+end</pre>
+<p></p>
+<h2>模擬</h2>
 <p><a href="/downloads/MTB_nx_kinematic.ttt">/downloads/MTB_nx_kinematic.ttt</a></p>
 <p>操作教學 r往左l往右u往下d往上</p>
 <script>
@@ -1064,5 +1150,7 @@ var winkVideoData = {
 <h2>工程圖</h2>
 <p><a href="/downloads/NX12.7z">/downloads/NX12.7z</a></p>
 <h1>w15</h1>
-</div>
-</div>
+<h1>w16</h1>
+<p>問題:</p>
+<p><span>1</span>已知左側綠色底座的<span> uArm </span>機械手臂<span>, </span>其基座座標原點位於絕對座標<span> (1.0, 0.25, 0), </span>啟動模擬後<span> green_suctionpad_frame </span>座標原點則位於<span> (0.22859, 0.26047, 0.36576), </span>請列出運算式說明<span>, </span>啟動模擬後<span> joint1, joint2 </span>與<span> joint3 </span>分別以逆時針旋轉<span> 5 </span>度後<span>, </span>求<span> green_suctionpad_frame </span>的絕對座標值<span>.</span></p>
+<p><span></span></p></div></div>
